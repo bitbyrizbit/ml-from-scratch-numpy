@@ -1,4 +1,4 @@
-# **EDA Engine – Red Wine Quality Dataset**
+# **EDA Engine - Red Wine Quality Dataset**
 
 ## **Overview**
 
