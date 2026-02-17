@@ -1,0 +1,21 @@
+Experiment: Linear Regression (Batch Gradient Descent)
+Learning Rate: 0.001
+Epochs: 1000
+Feature Scaling: Standardization
+
+Results:
+Train MSE: 4.74386499640021
+Test MSE: 4.551846129066924
+Train R2: -6.153149660489235
+Test R2: -6.510135402430604
+
+Behavior:
+Training loss decreases smoothly but very slowly across iterations.
+
+Observations:
+The small learning rate leads to highly stable optimization but slow convergence.
+After 1000 iterations, the optimizer has not reached the global minimum of the loss surface.
+Thus, resulting in higher test error.
+
+Conclusion:
+LR = 0.001 is safe but inefficient and underfits within the given training budget.

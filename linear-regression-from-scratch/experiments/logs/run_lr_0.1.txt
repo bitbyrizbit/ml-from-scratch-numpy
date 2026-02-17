@@ -1,0 +1,21 @@
+Experiment: Linear Regression (Batch Gradient Descent)
+Learning Rate: 0.1
+Epochs: 1000
+Feature Scaling: Standardization
+
+Results:
+Train MSE: 0.4351984665903881
+Test MSE: 0.3500759717692873
+Train R2: 0.34377564161316987
+Test R2: 0.4224062337397684
+
+Behavior:
+Loss decreases rapidly in early iterations and stabilizes near the minimum.
+
+Observations:
+The learning rate enables fast convergence without numerical instability.
+The model reaches a better optimum within fewer iterations. 
+Thus, leads to significantly lower test error compared to smaller learning rates.
+
+Conclusion:
+LR = 0.1 achieves optimal convergence speed and generalization performance for this dataset.
