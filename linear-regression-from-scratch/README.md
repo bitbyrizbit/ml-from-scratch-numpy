@@ -122,6 +122,7 @@ Implementation correctness is validated by comparing results with `scikit-learn`
 
 Alignment confirms gradient and update accuracy.
 
+--- 
 
 ## Experimental Insights
 
@@ -131,15 +132,14 @@ Learning rate selection proved critical. Higher values of α accelerated initial
 
 Residual analysis indicated that errors were reasonably symmetrically distributed around zero, suggesting that the linear assumption is appropriate for the dataset at this scale. No extreme bias patterns were observed, though minor variance differences across quality levels suggest that nonlinear extensions could potentially improve performance.
 
-Comparison against scikit-learn’s `LinearRegression` confirmed that the manually implemented gradients and update rules converge to nearly identical parameter values and evaluation metrics, validating the correctness of the implementation.
 ---
+
 
 ## Setup
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/bitbyrizbit/linear-regression-from-scratch.git
 cd linear-regression-from-scratch
 ```
 
