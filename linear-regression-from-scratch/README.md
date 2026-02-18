@@ -54,6 +54,7 @@ Target:
 * Quality score (int rating)
 
 
+
 ## Architecture
 
 The implementation follows a modular design resembling production ML systems:
@@ -67,6 +68,7 @@ src/
 ├── preprocessing.py  # Feature scaling
 └── utils.py          # Train-test split
 ```
+
 
 ### Design Decisions
 
@@ -90,6 +92,7 @@ Parameter update:
 Where `α` is the learning rate.
 
 Loss is tracked per iteration to analyze convergence behavior.
+
 
 
 ## Preprocessing
