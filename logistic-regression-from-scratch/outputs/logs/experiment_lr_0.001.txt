@@ -1,0 +1,26 @@
+EXPERIMENT: Learning Rate Sensitivity Analysis
+LEARNING RATE: 0.001
+OPTIMIZER: Batch Gradient Descent
+LOSS FUNCTION: Binary Cross-Entropy
+MODEL: Binary Logistic Regression
+
+
+OBSERVATIONS:-
+Training exhibits stable loss reduction across iterations (epochs).
+However, the rate of convergence is significantly slow, requiring a large number of iterations to achieve acceptable loss values.
+
+
+IMPLICATIONS:-
+While this learning rate guarantees stability, it is computationally inefficient for practical use on this dataset. 
+It may be suitable only in scenarios where higher learning rates lead to divergence or unstable training behavior.
+
+
+RESULTS:-
+Final Training Loss: 0.2565
+Validation Accuracy: 0.9474
+Validation F1 Score: 0.9583
+
+
+CONCLUSION:-
+Learning rate 0.001 is stable but overly conservative. 
+It is not recommended as the default choice due to slow convergence and inefficient training.
