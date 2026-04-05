@@ -1,0 +1,20 @@
+Experiment: Linear Regression (Batch Gradient Descent)
+Learning Rate: 1.0
+Epochs: 1000
+Feature Scaling: Standardization
+
+Results:
+Train MSE: nan
+Test MSE: nan
+Train R2: nan
+Test R2: nan
+
+Behavior:
+Loss explodes after a few iterations and becomes numerically unstable.
+
+Observations:
+Parameter updates overshoot the minimum, causing gradient explosion and overflow warnings.
+Loss values become NaN/Inf, preventing meaningful training.
+
+Conclusion:
+LR = 1.0 exceeds the stability region for gradient descent.
