@@ -14,9 +14,6 @@ The dataset used in this module is the Red Wine Quality dataset, a real-world re
 The Red Wine Quality dataset is sourced from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
 > P. Cortez et al., 2009 — "Modeling wine preferences by data mining from physicochemical properties."
 
-<br>
-<br>
-
 ## Prerequisites
 - Python 3.8+
 - pip or conda
