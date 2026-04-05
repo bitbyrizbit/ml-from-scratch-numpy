@@ -154,7 +154,6 @@ Residual analysis indicated that errors were reasonably symmetrically distribute
 
 Clone the repository:
 ```bash
-git clone https://github.com/bitbyrizbit/linear-regression.git
 cd linear-regression
 ```
 
