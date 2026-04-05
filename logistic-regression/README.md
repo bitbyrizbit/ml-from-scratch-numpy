@@ -173,7 +173,6 @@ logistic-regression/
 
 Clone the repository:
 ```bash
-git clone https://github.com/bitbyrizbit/logistic-regression.git
 cd logistic-regression
 ```
 
