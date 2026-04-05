@@ -323,7 +323,7 @@ sgd-logistic-regression/
 
 Clone the repo:
 ```bash
-cd sgd-logistic-regression-from-scratch
+cd sgd-logistic-regression
 pip install -r requirements.txt
 jupyter notebook
 ```
