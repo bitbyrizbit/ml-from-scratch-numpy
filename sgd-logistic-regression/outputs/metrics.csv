@@ -1,6 +1,6 @@
 Method,Iterations_to_Threshold
 Batch GD,50
-SGD,99
-MiniBatch (16),295
+SGD,1666
+MiniBatch (16),333
 MiniBatch (32),320
 MiniBatch (64),160

@@ -27,8 +27,16 @@ class StochasticGradientDescent(Optimizer):
                 xi = X_shuffled[i:i+1]
                 yi = y_shuffled[i:i+1]
 
+                # Update using single sample
                 y_pred = model.forward(xi)
-                loss = model.compute_loss(yi, y_pred)
+                dw, db = model.gradients(xi, yi, y_pred)
+                self._update(model, dw, db)
+
+                # Compute full dataset loss for tracking
+                y_pred_full = model.forward(X)
+                loss = model.compute_loss(y, y_pred_full)
+
+                self.loss_history.append(loss)
 
                 dw, db = model.gradients(xi, yi, y_pred)
 

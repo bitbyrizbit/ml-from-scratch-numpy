@@ -12,7 +12,7 @@ class LogisticRegression:
 
     def __init__(self, n_features: int):
         # Initialize parameters to zeros for controlled comparison across optimizers
-        self.w = np.zeros((n_features, 1))
+        self.w = np.random.randn(n_features, 1) * 0.01
         self.b = 0.0
 
     @staticmethod

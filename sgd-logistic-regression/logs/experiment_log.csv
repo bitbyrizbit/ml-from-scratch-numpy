@@ -1,6 +1,6 @@
 timestamp,method,lr,dataset,iterations_to_threshold
-2026-04-05 17:55:23,Batch GD,0.01,synthetic_500x20,50
-2026-04-05 17:55:23,SGD,0.01,synthetic_500x20,99
-2026-04-05 17:55:23,MiniBatch (16),0.01,synthetic_500x20,295
-2026-04-05 17:55:23,MiniBatch (32),0.01,synthetic_500x20,320
-2026-04-05 17:55:23,MiniBatch (64),0.01,synthetic_500x20,160
+2026-04-07 21:14:35,Batch GD,0.01,synthetic_500x20,50
+2026-04-07 21:14:35,SGD,0.01,synthetic_500x20,1666
+2026-04-07 21:14:35,MiniBatch (16),0.01,synthetic_500x20,333
+2026-04-07 21:14:35,MiniBatch (32),0.01,synthetic_500x20,320
+2026-04-07 21:14:35,MiniBatch (64),0.01,synthetic_500x20,160
