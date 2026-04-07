@@ -62,6 +62,22 @@ This ensures differences arise purely from **optimization dynamics**, not confou
 
 ---
 
+## Fair Comparison Setup
+
+To ensure that differences between optimization strategies are meaningful and not artifacts of implementation:
+
+- All models use the **same weight initialization**
+- Data is **shuffled at the beginning of every epoch**
+- Each optimizer trains for the **same number of epochs**
+- Loss is computed on the **full dataset for all methods**, including SGD
+
+This last point is particularly important.  
+Per-sample loss in SGD is not directly comparable to batch-level loss. Using a consistent full-dataset loss ensures that all curves reflect the same objective.
+
+As a result, observed differences arise purely from **optimization dynamics**, not measurement inconsistencies.
+
+---
+
 ## Dataset
 
 Synthetic classification dataset:
@@ -121,7 +137,7 @@ The project is structured around **controlled experiments**:
 
 * Measured as:
 
-  > *iterations required to reach a fixed loss threshold*
+  > *number of optimizer updates required to reach a fixed loss threshold*
 
 ### 3. Noise Analysis
 
@@ -146,8 +162,8 @@ From `metrics.csv`:
 
 ```
 Batch GD           - 50 iterations
-SGD                - 99 iterations
-MiniBatch (16)     - 295 iterations
+SGD                - 1666 iterations
+MiniBatch (16)     - 333 iterations
 MiniBatch (32)     - 320 iterations
 MiniBatch (64)     - 160 iterations
 ```
@@ -167,17 +183,17 @@ Reason:
 
 ---
 
-### 2. SGD Exhibits High Variance
+### 2. SGD Exhibits High Variance and Slower Convergence
 
 * Loss curve shows strong oscillations
-* Large spikes observed in early training
-* Does not decrease monotonically
+* Updates are highly noisy due to single-sample gradients
+* Convergence to the threshold is significantly delayed
 
-Yet:
+Despite making frequent updates, SGD required far more iterations to reach the same loss level.
 
-* Still trends downward in expectation
+> SGD uses high-variance gradient estimates derived from individual samples. While unbiased in expectation, these estimates introduce significant noise into the optimization trajectory, resulting in slower convergence to strict thresholds.
 
-> SGD uses *noisy but unbiased* gradient estimates
+This highlights a key trade-off: while SGD performs more frequent updates, the variance in those updates can slow down convergence when evaluated against a strict global loss criterion.
 
 ---
 
@@ -235,7 +251,7 @@ Performance depends on:
 
 In stable, well-conditioned settings:
 
-> **Low-variance updates (Batch GD) can outperform stochastic methods.**
+> **Low-variance updates (Batch GD) can significantly outperform stochastic methods when convergence to a precise threshold is required.**
 
 ---
 
@@ -352,3 +368,8 @@ In practice, performance emerges from the interaction of:
 
 Understanding that interaction is what separates implementation from engineering.
 
+---
+
+## One-Line Takeaway
+
+Optimization strategy significantly influences convergence behavior—even for convex models like logistic regression.
