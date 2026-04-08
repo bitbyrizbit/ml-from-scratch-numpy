@@ -100,6 +100,6 @@ Modules are sequenced intentionally — each builds on concepts introduced in th
 - [x] EDA Engine — analytical foundation, feature inspection, correlation analysis
 - [x] Linear Regression — gradient descent, MSE optimization, convergence behavior
 - [x] Logistic Regression — probabilistic classification, cross-entropy, decision calibration
-- [ ] Ridge Regression — L2 regularization, bias-variance tradeoff
+- [ ] Regularization — L1 & L2, bias-variance tradeoff, sparsity (Lasso), weight shrinkage (Ridge)
 - [x] Stochastic Gradient Descent — mini-batch optimization, convergence comparison
 - [ ] Neural Network — extending logistic regression to multiple layers from scratch
