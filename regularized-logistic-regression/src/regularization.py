@@ -27,7 +27,7 @@ class Regularization:
             return 0.0
 
         if self.penalty == "l2":
-            return self.lambda_ * np.sum(w ** 2)
+            return (self.lambda_ / 2) * np.sum(w ** 2)
 
         elif self.penalty == "l1":
             return self.lambda_ * np.sum(np.abs(w))
@@ -46,8 +46,8 @@ class Regularization:
         if self.penalty is None or self.lambda_ == 0:
             return np.zeros_like(w)
         if self.penalty == "l2":
-            # d/dw (λ ||w||^2) = 2λw
-            return 2 * self.lambda_ * w
+            # d/dw (λ/2 ||w||^2) = λw
+            return self.lambda_ * w
         elif self.penalty == "l1":
             # Subgradient: sign(w)
             # Define sign(0) = 0
