@@ -15,3 +15,11 @@ venv/
 Thumbs.db
 
 *.log
+
+# experiment outputs
+experiments/
+outputs/
+
+# optional caches
+.matplotlib/
+.pytest_cache/
