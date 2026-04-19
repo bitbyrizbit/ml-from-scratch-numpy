@@ -15,6 +15,7 @@ def relu(z):
 def relu_derivative(z):
     return (z > 0).astype(float)
 
+# kept for reference, not used in the current implementation
 def tanh(z):
     return np.tanh(z)
 

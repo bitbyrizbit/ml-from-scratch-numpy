@@ -26,9 +26,7 @@ class NeuralNetwork:
 
         return A1, A2
 
-    def backward(self, X, y, A1, A2):
-
-        m = X.shape[0]
+    def backward(self, y, A1, A2):
 
         # output layer
         dZ2 = A2 - y
@@ -36,7 +34,7 @@ class NeuralNetwork:
 
         # hidden layer
         dZ1 = dA1 * relu_derivative(self.layer1.Z)
-        dW1, db1, i = self.layer1.backward(dZ1)
+        dW1, db1, _ = self.layer1.backward(dZ1)
 
         # update
         self.layer2.W -= self.lr * dW2
@@ -47,19 +45,19 @@ class NeuralNetwork:
 
     def fit(self, X, y):
 
-        for i in range(self.epochs):
+        for _ in range(self.epochs):
 
             A1, A2 = self.forward(X)
 
             loss = self.loss_fn.compute(y, A2)
             self.loss_history.append(loss)
 
-            self.backward(X, y, A1, A2)
+            self.backward(y, A1, A2)
 
         return self
 
     def predict_proba(self, X):
-        i, A2 = self.forward(X)
+        _, A2 = self.forward(X)
         return A2
 
     def predict(self, X):
